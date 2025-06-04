@@ -11,7 +11,7 @@ resource "lab" "main" {
     }
 
     tab "vscode" {
-      panel = "editor"
+      panel = "terminal"
       target = resource.editor.vscode
     }
 
