@@ -2,6 +2,8 @@ resource "aws_account" "aws" {
   regions  = ["us-east-1", "eu-west-1"]
   services = ["ec2", "kms"]
 
+  scp_policy = file("files/scp_policy.json")
+
   user "user" {
     iam_policy = file("files/iam_policy.json")
   }
