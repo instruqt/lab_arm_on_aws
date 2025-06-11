@@ -2,6 +2,15 @@ resource "lab" "main" {
   title       = "AWS ARM VM"
   description = ""
 
+  settings {
+    timelimit {
+      duration = "1h"
+    }
+    idle {
+      enabled = false
+    }
+  }
+
   layout "single_column" {
     reference = resource.layout.single_panel
 
