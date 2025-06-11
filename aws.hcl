@@ -10,13 +10,13 @@ resource "aws_account" "aws" {
 resource "terraform" "instance" {
   source = "files/terraform"
 
-  volume {
-    source      = data("ssh")
-    destination = "/tmp/ssh"
-  }
+#  volume {
+#    source      = data("ssh")
+#    destination = "/tmp/ssh"
+#  }
 
   variables = {
-    region          = "us-east-1"
+    region = "us-east-1"
   }
 
   environment = {

@@ -1,6 +1,6 @@
 resource "editor" "vscode" {
   workspace "root" {
-    target = resource.container.ssh
+    target    = resource.container.ssh
     directory = "/root"
   }
 }

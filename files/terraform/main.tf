@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "6.0.0-beta2"
     }
   }
 }
 
 provider "aws" {
-  region     = var.region
+  region = var.region
 }
 
 data "aws_ami" "ami" {
@@ -49,9 +49,9 @@ resource "aws_key_pair" "deployer" {
 }
 
 resource "aws_instance" "instance" {
-  ami           = data.aws_ami.ami.id
-  instance_type = "t4g.micro"
-  key_name      = aws_key_pair.deployer.key_name
+  ami                         = data.aws_ami.ami.id
+  instance_type               = "t4g.micro"
+  key_name                    = aws_key_pair.deployer.key_name
   associate_public_ip_address = true
 }
 
