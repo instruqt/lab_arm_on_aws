@@ -2,6 +2,11 @@ resource "network" "main" {
   subnet = "10.0.5.0/24"
 }
 
+resource "virtual_browser" "browser" {
+  url = "https://www.instruqt.com.com"
+  agent = "chromium"
+}
+
 resource "container" "ssh" {
   image {
     name = "kroniak/ssh-client"
